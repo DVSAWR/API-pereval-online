@@ -17,7 +17,7 @@ class CustomUser(models.Model):
 class Coords(models.Model):
     latitude = models.FloatField(max_length=254)
     longitude = models.FloatField(max_length=254)
-    height = models.IntegerField(max_length=254)
+    height = models.IntegerField()
 
     def __str__(self):
         return f'{self.latitude} {self.longitude} {self.height}'
