@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import CustomUser, Coords, Post, Images
+
+from .models import CustomUser, Coords, Post
 
 
 class UserSerializer(serializers.ModelSerializer):

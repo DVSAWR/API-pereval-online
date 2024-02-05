@@ -1,10 +1,9 @@
-from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework import generics, viewsets, mixins
 from django.http import JsonResponse
+from rest_framework import generics, viewsets, mixins
+from rest_framework.response import Response
 
-from .models import CustomUser, Coords, Post, Images
-from .serializers import UserSerializer, CoordsSerializer, PostSerializer, PostDetailSerializer, AuthEmailPostSerializer
+from .models import Post
+from .serializers import PostSerializer, PostDetailSerializer, AuthEmailPostSerializer
 
 
 class PostAPIView(generics.CreateAPIView):
