@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,13 +76,13 @@ WSGI_APPLICATION = 'API_pereval_online.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'USER': '',
-        # 'PASSWORD': '',
-        # 'HOST': '',
-        # 'PORT': '',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': os.getenv('FSTR_DB_LOGIN'),
+        'PASSWORD': os.getenv('FSTR_DB_PASS'),
+        'HOST': os.getenv('FSTR_DB_HOST'),
+        'PORT': os.getenv('FSTR_DB_PORT'),
+    },
 }
 
 # Password validation
